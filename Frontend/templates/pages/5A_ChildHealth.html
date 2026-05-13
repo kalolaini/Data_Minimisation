@@ -182,9 +182,16 @@
       <div class="custom-select">
         <select id="Question1-5A">
           <option value="">Select</option>
+<<<<<<< HEAD
           <option value="Up to 30 Years After Death">Up to 30 Years After Death</option>
           <option value="Up to 130 Years After Birth">Up to 130 Years After Birth</option>
           <option value="Unsure">Unsure</option>
+=======
+          <option value="MHR valid retention period">Up to 30 years after death 'or' up to 130 years from birth.</option>
+          <option value="Determined by Company">Information is kept for a set period determined by organisation that surpasses 30 years after death 'or' 130 years from birth.</option>
+          <option value="Inconsistent Policy">There is no consistent policy.</option>
+         <option value="Unsure">Unsure</option>
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
         </select>
       </div>
       
@@ -264,8 +271,28 @@
     </div>
   </main>
 
+<<<<<<< HEAD
   <script src="../static/js/tooltip.js"></script>
   <script src="../static/js/actions.js"></script>
+=======
+  <script>
+  const q1Select = document.getElementById('Question1-5A');
+  const q3Block  = document.getElementById('Question1-1B');
+  const q3Select = document.getElementById('Question1B');
+
+  q1Select.addEventListener('change', function () {
+    if (this.value === 'Determined by Company') {
+      q3Block.style.display = 'block';
+    } else {
+      q3Block.style.display = 'none';
+      q3Select.value = '';
+    }
+  });
+  </script>
+
+  <!-- <script src="../static/js/tooltip.js"></script> -->
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
   <script src="../static/js/validation.js"></script>
+  <script src="../static/js/actions.js"></script>
 </body>
 </html>

@@ -1882,6 +1882,14 @@ input[type="checkbox"]:hover {
   }
 }
 
+.hero-content .hero-lead {
+  font-size: 1.2rem;
+}
+
+.hero-content .hero-support {
+  font-size: 1.2rem;
+}
+
 /* --------------------- RESPONSIVE for Key Findings Section --------------------- */
 @media (max-width: 768px) {
   .key-findings {

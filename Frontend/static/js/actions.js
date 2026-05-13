@@ -26,16 +26,28 @@ function collectFormState() {
   checkboxes.forEach(cb => {
     if (cb.id) state.checkboxes[cb.id] = cb.checked;
   });
+<<<<<<< HEAD
 
   const radioGroups = {};
+=======
+  
+  // Radios: selected value per name group
+ const radioGroups = {};
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
   radios.forEach(r => {
     if (r.checked && r.name && r.id) {
       radioGroups[r.name] = r.value;
     }
   });
   Object.assign(state.radios, radioGroups);
+<<<<<<< HEAD
 
   selects.forEach(s => {
+=======
+  
+  // Selects by ID (only if changed from default)
+ selects.forEach(s => {
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
     if (s.id) state.selects[s.id] = s.value;
   });
 
@@ -132,6 +144,15 @@ function initPersistence() {
       const state = collectFormState();
       await syncToBackend(state, false);
 
+<<<<<<< HEAD
+=======
+      const isValid = window.FormValidator.validateForm();
+      if (!isValid) {
+        window.FormValidator.scrollToFirstError();
+        return;
+      }
+
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
       const nextUrl = continueBtn.dataset.nextUrl || continueBtn.getAttribute('href');
       if (nextUrl) {
         window.location.href = nextUrl;
@@ -164,5 +185,9 @@ if (document.readyState === 'loading') {
 window.persistForm = { save: saveFormState, restore: restoreFormState };
 
 window.addEventListener('beforeunload', function () {
+<<<<<<< HEAD
+=======
+  
+>>>>>>> d561d6edf2de1d533eefecc9c2ef8d1490b22ec3
   navigator.sendBeacon('/clear-session');
 });
